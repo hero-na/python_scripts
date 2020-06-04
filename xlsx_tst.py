@@ -1,7 +1,7 @@
 #!/bin/env python
 #-*- coding: utf-8 -*-
 
-from xlswriter import *
+from xlsxWriter import *
 
 workbook = Workbook('test.xlsx')
 worksheet = workbook.add_worksheet()
