@@ -1,14 +1,14 @@
 #!/bin/env python
 #-*- coding: utf-8 -*-
 
-from xlsxWriter import *
-from subprocess import *
+import subprocess
+import xlsxwriter
 
-cmd "vmstat 1 5 | awk {now=strftime(\"%Y-%m-%d %T \"); print now $0}"
-p = Popen(cmd, shell=True, stdout= PIPE)
+cmd = "vmstat 1 5 | awk {now=strftime(\"%Y-%m-%d %T \"); print now $0}"
+p = open(cmd, shell=True)
 (ret,err) = p.communicate()
 
-workbook = Workbook('vmstat.xlsx')
+workbook = xlsxwriter.Workbook('vmstat.xlsx')
 worksheet = workbook.add_worksheet()
 drows = ret.split("\n")
 
