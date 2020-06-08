@@ -1,6 +1,6 @@
 #!/bin/env python
 #-*- coding: utf-8 -*-
-
+## 
 def printlog(logfile,search_word):
     f = open(logfile)
     logdata = f.read()
