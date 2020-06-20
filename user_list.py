@@ -12,7 +12,7 @@ def grep_login_defs(keyword):
     ret = exec_cmd("grep %s /etc/login.defs" % keyword )
     return ret.split()[1]
 
-def got_accounts():
+def get_accounts():
     min_u = grep_login_defs("^UID_MIN")
     max_u = grep_login_defs("^UID_MAX")
 
